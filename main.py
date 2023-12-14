@@ -21,3 +21,8 @@ wariancja_fr = sum((i - srednia_fr) ** 2 for i in fertility_rate) / (len(fertili
 odchylenie_fr = wariancja_fr ** 0.5
 korelacja = kowriencja / (odchylenie_fr * odchylenie_lf)
 print(f'Kowariancja: {kowriencja}, Korelacja: {korelacja}')
+odchylenie_std_populacji = 9.09
+poziom_ufnosci = 0.95
+margines_bledu = 1.96 * (odchylenie_std_populacji / (len(life_expectancy) ** 0.5))
+przedzial_ufnosci = [srednia_lf - margines_bledu, srednia_lf + margines_bledu]
+print(f'Przedział ufności: {przedzial_ufnosci}')
