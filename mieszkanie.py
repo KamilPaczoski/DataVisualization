@@ -8,7 +8,6 @@ lata = 5
 wzrost_ceny = 0.05
 
 finalna_cena_mieszkania = cena * ((wzrost_ceny + 1) ** lata)
-
 miesieczna_skladka = -npf.pmt(oprocentowanie_banku, lata * 12, 0, finalna_cena_mieszkania)
 
 czas = np.arange(0, lata * 12 + 1, 1)
