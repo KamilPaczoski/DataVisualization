@@ -39,7 +39,7 @@ longest_runtime = {avarage_runtime.idxmax(): avarage_runtime.max()}
 print(longest_runtime)
 
 longest_genre = df_movies_genres[
-    df_movies_genres['genres'] == next(iter(longest_runtime))]  # tak mogłem w słowniki się nei bawić :P
+    df_movies_genres['genres'] == next(iter(longest_runtime))]  # tak mogłem w słowniki się nie bawić :P
 plt.figure(figsize=(10, 5))
 plt.hist(longest_genre['runtime'], color='orchid', bins=40)
 plt.show()
