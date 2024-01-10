@@ -71,8 +71,6 @@ P
  PythonFiles/Zadanie Korelacja.py,a\5\a54be96122e1344417a7a40f31601c447411e214
 R
 "PythonFiles/albumy wszechczasow.py,b\2\b283d0f2e0b2bafbf484a4b414dddd46588615be
-H
-ProjektDashboard/main.py,5\a\5ac93a5c84fe684141057f2cdaaa9bb446b6a646
 @
 WeatherDashboard,a\8\a89857d82028af35fb04060e9f03e6f98c616d86
 H
@@ -81,7 +79,19 @@ G
 ProjektDashboard/app.py,b\a\ba9de39bf852a52167db3423ee00a71ed32c0e5b
 H
 ProjektDashboard/tab1.py,a\7\a764bafaf1f30f709a8490bb1d1c023b41574d2f
-K
-ProjektDashboard/db/tab2.py,5\2\5254718fd898f295db39f16b00ce13a6466ddb82
 H
 ProjektDashboard/tab2.py,a\a\aa71545c66371d4a30ad6197c8632f20e75c1361
+Q
+!ProjektDashboard/db/customers.csv,3\9\39ceae7861ff9f5ec65b89a5fb8998f91350e49c
+U
+%ProjektDashboard/db/country_codes.csv,8\a\8a9cbce5e7e43007228a20560ffce8f520e3b963
+E
+PythonFiles/fig2.html,b\6\b6decd4efff407b352ea3e9da6a8e74c4289ec41
+H
+ProjektDashboard/tab3.py,9\8\98bcf0c0570836b6277e808e405bcd8d2b21d00f
+U
+%ProjektDashboard/db/prod_cat_info.csv,a\c\ac0b2d3ce0666c7a86e5a303bcba0f397cf61a09
+f
+6ProjektDashboard/db/transactions/transactions-2019.csv,9\6\96d62fbd60e56e7ef6a8c4c25727e4a0e1c6bdd0
+f
+6ProjektDashboard/db/transactions/transactions-2016.csv,0\4\04bb5c2885600dd48cd06a9d26b90e8190813522

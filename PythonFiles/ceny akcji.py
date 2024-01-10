@@ -3,8 +3,6 @@ import cufflinks as cf
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 
-# cf.go_offline()
-
 df_miedz = pd.read_csv('ca_c_f_d.csv')
 df_miedz['Data'] = pd.to_datetime(df_miedz['Data'])
 df_miedz = df_miedz.set_index('Data')
@@ -29,5 +27,6 @@ fig2.update_layout(height=600, width=800)
 fig2.write_html("fig2.html")
 # fig.add_table(table)
 # fig.add_trace(fig2['data'][0], row=3, col=1)
+fig.add_trace(table)
 fig.write_html("fig.html")
 

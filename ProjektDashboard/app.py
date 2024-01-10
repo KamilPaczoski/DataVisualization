@@ -1,15 +1,16 @@
-import pandas as pd
 import datetime as dt
 import os
 import dash
 import dash_auth
+import pandas as pd
 from dash import dcc
 from dash import html
 from dash.dependencies import Input, Output
 from pygments.lexers import go
-from time import sleep
 
-from ProjektDashboard import tab1, tab2
+import tab1
+import tab2
+import tab3
 
 
 class db:
@@ -24,7 +25,10 @@ class db:
         transactions = pd.DataFrame()
         src = r'db\transactions'
         for filename in os.listdir(src):
-            transactions = transactions.append(pd.read_csv(os.path.join(src, filename), index_col=0))
+            temp = pd.read_csv(os.path.join(src, filename), index_col=0)
+            transactions = pd.concat([transactions, temp], ignore_index=True)
+
+        print(transactions.shape, type(transactions))
 
         def convert_dates(x):
             try:
@@ -50,7 +54,7 @@ class db:
 
 
 df = db()
-df.merge() #TUTAJ
+df.merge()  # TUTAJ
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
@@ -62,7 +66,8 @@ auth = dash_auth.BasicAuth(app, USERNAME_PASSWORD)
 
 app.layout = html.Div([html.Div([dcc.Tabs(id='tabs', value='tab-1', children=[
     dcc.Tab(label='Sprzedaż globalna', value='tab-1'),
-    dcc.Tab(label='Produkty', value='tab-2')]), html.Div(id='tabs-content')],
+    dcc.Tab(label='Produkty', value='tab-2'),
+    dcc.Tab(label='Kanały sprzedaży', value='tab-3')]), html.Div(id='tabs-content')],
                                 style={'width': '80%', 'margin': 'auto'})], style={'height': '100%'})
 
 
@@ -72,6 +77,8 @@ def render_content(tab):
         return tab1.render_tab(df.merged)
     elif tab == 'tab-2':
         return tab2.render_tab(df.merged)
+    elif tab == 'tab-3':
+        return tab3.render_tab3(df.merged)
 
 
 def tab1_bar_sales(start_date, end_date):
@@ -125,5 +132,4 @@ def tab2_barh_prod_subcat(chosen_cat):
 
 
 if __name__ == '__main__':
-    app.run_server()
-    sleep(20)
+    app.run_server(debug=True)
